@@ -15,16 +15,18 @@
                 <div class="header">
                     <img src="img/Qulix.png" alt="logo">
                     <div class="userName">
-                        <select name="city">
-                            <option value="1" selected>New York</option>
-                            <option value="2">Minsk</option>
-                            <option value="3">Brest</option>
-                            <option value="4">Gomel</option>
-                        </select>
+                        <label>
+                            <select name="city">
+                                <option value="1" selected>New York</option>
+                                <option value="2">Minsk</option>
+                                <option value="3">Brest</option>
+                                <option value="4">Gomel</option>
+                            </select>
+                        </label>
                         <button type="button" class="bell"></button>
                         <button type="button" class="envelope"></button>
                         <button type="button" class="userName">
-                            <p>User name</p>
+                            <span>User name</span>
                             <img src="img/userPhoto.jpeg" alt="user photo">
                         </button>
                         <button type="button" class="search"></button>
@@ -47,10 +49,10 @@
                 <div class="mobile-menu_icon"></div>
             </label>
             <div class="icons">
-                <img src="img/logo-white.png">
+                <img src="img/logo-white.png" alt="logo">
                 <span>Page title</span>
-                <img src="img/userPhotoBig.jpeg">
-                <img src="icons/magnifying-glass-white.svg">
+                <img src="img/userPhotoBig.jpeg" alt="photo">
+                <img src="icons/magnifying-glass-white.svg" alt="search">
             </div>
             <div class="mobile-menu_container">
                 <ul class="mobile-menu_list">
@@ -158,21 +160,25 @@
                         <div class="empty"></div>
                         <div class="upSelect">
                             <p>Page title in</p>
-                            <select name="title">
-                                <option value="1" selected>New York</option>
-                                <option value="2">Minsk</option>
-                                <option value="3">Brest</option>
-                                <option value="4">Gomel</option>
-                            </select>
+                            <label>
+                                <select name="title">
+                                    <option value="1" selected>New York</option>
+                                    <option value="2">Minsk</option>
+                                    <option value="3">Brest</option>
+                                    <option value="4">Gomel</option>
+                                </select>
+                            </label>
                         </div>
                         <div class="downSearch">
                             <form>
-                                <input type="text" placeholder="Search ...">
+                                <label>
+                                    <input type="text" placeholder="Search ...">
+                                </label>
                             </form>
-                            <img src="icons/magnifying-glass-gray.svg">
+                            <img src="icons/magnifying-glass-gray.svg" alt="search">
                             <div class="hidden-item">
-                                <img src="icons/plus-gray.svg">
-                                <img src="icons/customize-gray.svg">
+                                <img src="icons/plus-gray.svg" alt="plus">
+                                <img src="icons/customize-gray.svg" alt="customize">
                             </div>
                             <div class="item">
                                 <a href="#">+New item</a>

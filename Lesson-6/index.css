@@ -89,7 +89,7 @@ button.search:hover {
   background: url("icons/magnifying-glass-white.svg") no-repeat center/60%;
   transition: 0.6s;
 }
-button.userName p {
+button.userName span {
   height: 30px;
   padding: 8px 0 0 0;
   margin: 0;
