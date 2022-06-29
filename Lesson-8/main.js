@@ -78,9 +78,18 @@ murzik.animalFeed();
 console.log(' ');
 
 //task 5:
-murzik.stroke = function () {
-    console.log('Гладим кота');
-    return this;
+function Cat() {
+    Animal.apply(this, arguments);
+    var happyCat = this.animalFeed;
+    this.animalFeed = function () {
+        happyCat();
+        console.log('Кот доволен ^_^');
+        return this;
+    }
+    this.stroke = function () {
+        console.log('Гладим кота');
+        return this;
+    }
 }
 
 murzik.animalFeed().stroke();
