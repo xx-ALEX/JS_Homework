@@ -1,7 +1,6 @@
 //task 1:
 /*
 function Animal(name) {
-    var self = this;
     var foodAmount = 50;
 
     function formatFoodAmount() {
@@ -20,38 +19,65 @@ function Animal(name) {
 
     this.name = name;
 
-    self.animalFeed = function() {
+    var self = this;
+    this.feed = function() {
         console.log('Насыпаем в миску ' + self.dailyNorm() + ' корма.');
     };
 }
 
-function Cat() {
+function Cat(name) {
     Animal.apply(this, arguments);
-    var happyCat = this.animalFeed;
-    this.animalFeed = function () {
-        happyCat();
+
+    var animalFeed = this.feed;
+    this.feed = function() {
+        animalFeed();
+
         console.log('Кот доволен ^_^');
         return this;
-    }
+    };
+
+    this.stroke = function() {
+        console.log('Гладим кота.');
+        return this;
+    };
 }
 
-var murzik = new Cat('Мурзик');
+var barsik = new Cat('Барсик');
 
-console.log(murzik);
-murzik.animalFeed();
-console.log(' ');
+barsik.feed().stroke().stroke().feed();
+console.log(barsik);
+*/
+function Cat(name) {
+    this._foodAmount = 50;
+    this.name = name;
+    this._self = this;
+}
 
-//task 5:
-murzik.stroke = function () {
-    console.log('Гладим кота');
+Cat.prototype._formatFoodAmount = function () {
+    return this._foodAmount + ' гр.';
+};
+Cat.prototype.dailyNorm = function (amount) {
+    if (!arguments.length) return this._formatFoodAmount();
+
+    if (amount < 30 || amount > 100) {
+        return 'Недопустимое количество корма.';
+    }
+    this._foodAmount = amount;
+};
+Cat.prototype.feed = function () {
+    console.log('Насыпаем в миску ' + this._self.dailyNorm() + ' корма.');
+    console.log('Кот доволен ^_^');
+    return this;
+};
+Cat.prototype.stroke = function () {
+    console.log('Гладим кота.');
     return this;
 }
 
-murzik.animalFeed().stroke();
-console.log(' ');
-murzik.stroke().animalFeed()
- */
+var barsik = new Cat('Барсик');
 
+barsik.feed().stroke().stroke().feed();
+console.log(barsik);
 
 //task 2:
 var initialObj = {
