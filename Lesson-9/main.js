@@ -5,7 +5,7 @@ function Animal(name) {
 
     function formatFoodAmount() {
         return foodAmount + ' гр.';
-    }
+    };
 
     this.dailyNorm = function(amount) {
         if (!arguments.length) return formatFoodAmount();
@@ -47,30 +47,48 @@ var barsik = new Cat('Барсик');
 barsik.feed().stroke().stroke().feed();
 console.log(barsik);
 */
-function Cat(name) {
+//прототипный стиль класса Animal (класс-родитель):
+function Animal(name) {
     this._foodAmount = 50;
     this.name = name;
-    this._self = this;
 }
 
-Cat.prototype._formatFoodAmount = function () {
+Animal.prototype._formatFoodAmount = function () {
     return this._foodAmount + ' гр.';
 };
-Cat.prototype.dailyNorm = function (amount) {
+
+Animal.prototype.dailyNorm = function (amount) {
     if (!arguments.length) return this._formatFoodAmount();
 
     if (amount < 30 || amount > 100) {
         return 'Недопустимое количество корма.';
     }
+
     this._foodAmount = amount;
 };
-Cat.prototype.feed = function () {
-    console.log('Насыпаем в миску ' + this._self.dailyNorm() + ' корма.');
-    console.log('Кот доволен ^_^');
-    return this;
+
+Animal.prototype.feed = function () {
+    console.log('Насыпаем в миску ' + this.dailyNorm() + ' корма.');
 };
+
+//прототипный стиль класса Cat (класс-потомок):
+function Cat(name) {
+    Animal.apply(this, arguments);
+}
+
+//наследование
+Cat.prototype = Object.create(Animal.prototype);
+Cat.prototype.constructor = Cat;
+
 Cat.prototype.stroke = function () {
     console.log('Гладим кота.');
+    return this;
+};
+
+//полиморфизм
+Cat.prototype.feed = function () {
+    Animal.prototype.feed.apply(this);
+    console.log('Кот доволен ^_^');
     return this;
 }
 
@@ -146,8 +164,7 @@ function deepCompare(obj1, obj2) {
                 return false;
             } else if (Array.isArray(arrA[i]) && Array.isArray(arrB[i])) {
                 return equalArrays(arrA[i], arrB[i]);
-            }
-            else if (String(arrA[i]) === '[object Object]' && String(arrB[i]) === '[object Object]') { //если в массиве встречаем объект
+            } else if (String(arrA[i]) === '[object Object]' && String(arrB[i]) === '[object Object]') { //если в массиве встречаем объект
                 if (equalObjects(arrA[i], arrB[i]) === false) { //поочередно сравниваем все объекты в массиве
                     return false;
                 }
@@ -180,6 +197,10 @@ function deepCompare(obj1, obj2) {
                 for (var k = 0; k < arrA.length; k++) {
                     if (String(arrA[k]) === '[object Object]') { //если находим вложенные объекты, тогда их тоже сравниваем
                         if (equalObjects(arrA[k], arrB[k]) === false) {
+                            return false;
+                        }
+                    } else if (typeof arrA[k] === 'function' && typeof arrB[k] === 'function') { //если в массивах встречаем функцию
+                        if (arrA[k].toString() !== arrB[k].toString()) { //приводим их к строке и производим сравнение
                             return false;
                         }
                     }
