@@ -1,21 +1,28 @@
 //task 1:
 var arrayNames = ['Vasya', 'Sasha', 'Petya', 'Inna'];
 
-var arrayOfObj = arrayNames.map(function (person) {
+function toObject (person) {
     if (typeof person === 'string' && person.length !== 0) {
         return {['name']: person};
     }
-});
+}
+function fromArrayToObject (array) {
+    return array.map(toObject);
+}
 
-console.log(arrayOfObj);
+console.log(fromArrayToObject(arrayNames));
 
 //task 2:
 var currentTime = ['00', '13', '24'];
-var result = currentTime.reduce(function (a, b) {
-    return  a + ' : ' + b;
-}, 'Текущее время');
 
-console.log(result);
+function changeString(a,b) {
+    return  a + ' : ' + b;
+}
+function setCurrentTime (array) {
+    return array.reduce(changeString, 'Текущее время');
+}
+
+console.log(setCurrentTime(currentTime));
 
 //task 3:
 var someText = 'concat() - возвращает строку, содержащую результат ' +
@@ -53,7 +60,7 @@ function countSentencesLetters(text) {
             arr = text.slice(startIndex,i); //убираем из массива значения до знаков '...', '.', '!', '?'
 
             if (arr[0] === ' ' || arr[0] === '.' || //убираем лишние пробелы и точки в начале предложения
-            arr[1] === ' ' || arr[1] === '.') {
+                arr[1] === ' ' || arr[1] === '.') {
                 arr = arr.slice(2);
             }
 
