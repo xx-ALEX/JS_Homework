@@ -18,19 +18,27 @@ console.log(filterNumbersArr([-1, 0, 2, 34, -2]));
 
 //фильтрация массива через функцию
 var arr1 = [-1, 0, 2, 34, -2];
-var newArr1 = arr1.filter(function (number) {
-    return number > 0;
-});
 
-console.log(newArr1);
+function getPositiveNumbers(number) {
+    return number > 0;
+}
+function filterPositiveNumbers (array) {
+    return array.filter(getPositiveNumbers);
+}
+
+console.log(filterPositiveNumbers (arr1));
 
 //task 2:
 var arr2 = [-1, 0, 2, 34, -2];
-var newArr2 = arr2.find(function (number) {
-    return number > 0;
-})
 
-console.log(newArr2);
+function getFirstPositive(number) {
+    return number > 0;
+}
+function findFirstPositive (array) {
+    return array.find(getFirstPositive);
+}
+
+console.log(findFirstPositive(arr2));
 
 //task 3:
 function isPalindrome(str) {
@@ -56,16 +64,10 @@ function areAnagrams(str1,str2) {
         return false;
     } else if (str1.length === 0 && str2.length === 0) {
         return false;
-    } else { //делаем подсчет числовых значений Unicode для каждого слова и сравниваем их значения
-        var sumOfCodes1 = 0;
-        for (var i = 0; i < str1.length; i++) {
-            sumOfCodes1 += str1.toLowerCase().charCodeAt(i);
-        }
-        var sumOfCodes2 = 0;
-        for (var j = 0; j < str2.length; j++) {
-            sumOfCodes2 += str2.toLowerCase().charCodeAt(j);
-        }
-        return sumOfCodes1 === sumOfCodes2;
+    } else { //сравниваем строки с одной длиной, предварительно отсортировав буквы в алфавитном порядке
+        str1 = str1.toLowerCase();
+        str2 = str2.toLowerCase();
+        return str1.split('').sort().join('') === str2.split('').sort().join('');
     }
 }
 
@@ -75,36 +77,17 @@ console.log(areAnagrams('кот','отко'));
 
 //task 5:
 function divideArr(array, n) {
-    if (!Array.isArray(array) || n < 0) {
-        return 'аргументы функции не корректны!';
-    } else if (n === 0) {
+    if (n === 0) {
         return array;
-    } else if (n === 1) {
-        var newArr1 = [];
-        newArr1.push(array);
-
-        return newArr1;
-    } else if (n > array.length) {
-        var newArr2 = [];
-
-        for (var i = 0; i < array.length; i++) {
-            newArr2.push(array.slice(i,i+1));
-        }
-        for (var j = array.length; j < n; j++) {
-            newArr2.push([]);
-        }
-
-        return newArr2;
-    } else if (n <= array.length) {
-        var newArr3 = [];
+    } else {
+        var newArray = [];
         var startIndex = 0;
 
-        for (var k = 0; k < n; k++) {
-            newArr3.push(array.slice(startIndex, startIndex + Math.ceil(array.length / n)));
+        for (var i = 0; i < n; i++) {
+            newArray.push(array.slice(startIndex, startIndex + Math.ceil(array.length / n)));
             startIndex += Math.ceil(array.length / n);
         }
-
-        return newArr3;
+        return newArray;
     }
 }
 
