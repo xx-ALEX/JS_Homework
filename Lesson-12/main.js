@@ -45,13 +45,18 @@ addRow.addEventListener('click', function () {
 //добавление текстового ввода по клику на ячейку
 var newInput = document.createElement('input');
 newInput.setAttribute('type', 'text');
-newInput.setAttribute('onkeypress', 'handle(event)');
+newInput.setAttribute('onkeydown', 'handle(event)');
 var cell;
 var table = document.querySelector('table');
 
 table.addEventListener('click', function (event) {
     var target = event.target.closest('td');
-    if (target && target.className !== 'addRow') {
+    var createdInput = event.target.closest('input');
+
+    if (createdInput) { //если уже есть input, тогда убираем фокус
+        createdInput.blur();
+    }
+    else if (target && target.className !== 'addRow') { //если нет input, тогда добавляем его и устанавливаем фокус
         cell = target.firstElementChild;
         cell.setAttribute('id','added');
         cell.style.display = 'none';
@@ -59,6 +64,7 @@ table.addEventListener('click', function (event) {
         addInput(target);
     }
 });
+
 function addInput(td) {
     td.appendChild(newInput);
     newInput.focus();
@@ -69,17 +75,19 @@ newInput.oninput = function () {
     cell.innerHTML = newInput.value;
 }
 
-newInput.onblur = function () {
+newInput.addEventListener('blur', hideInput);
+
+function hideInput() {
     cell.removeAttribute('id');
-    newInput.remove();
     cell.style.display = 'block';
+    newInput.remove();
 }
 
-function handle(e) {
-    if(e.keyCode === 13) {
-        e.preventDefault();
+function handle(event) {
+    if(event.code === 'Enter') {
+        event.preventDefault();
         cell.removeAttribute('id');
-        newInput.remove();
         cell.style.display = 'block';
+        newInput.remove();
     }
 }
