@@ -26,24 +26,22 @@ secondPar.onclick = function (event) {
 
     if (target.tagName === 'A') {
         //showLink(target);
-        if (target.innerHTML === 'Link 3' && !localStorage[target.innerHTML]) {
+        if (target.innerHTML && !localStorage[target.innerHTML]) {
             checkAndSetLS(target.innerHTML,target.getAttribute('href'), target);
-        } else if (target.innerHTML === 'Link 4' && !localStorage[target.innerHTML]) {
-            checkAndSetLS(target.innerHTML,target.getAttribute('href'),target);
-        } else if (target.innerHTML === 'Link 3' && localStorage[target.innerHTML]) {
-            alert(JSON.parse(localStorage.getItem(target.innerHTML))['path']);
-        } else if (target.innerHTML === 'Link 4' && localStorage[target.innerHTML]) {
+        } else if (target.innerHTML && localStorage[target.innerHTML]) {
             alert(JSON.parse(localStorage.getItem(target.innerHTML))['path']);
         }
     }
 
 }
+
 function showLink(A) {
     alert(A.getAttribute('href'));
 }
 
 //Practise (WEBSTORAGE):
 localStorage.clear();
+
 function checkAndSetLS(link, path, A) {
 
     if (!localStorage.getItem(link)) {
@@ -62,40 +60,47 @@ var buttonCreate = document.getElementById('create');
 var board = document.getElementsByClassName('board');
 var cell = document.createElement('div');
 
-inputX.addEventListener('keyup', enableButton);
-inputY.addEventListener('keyup', enableButton);
+inputX.addEventListener('input', enableButton);
+inputY.addEventListener('input', enableButton);
 
 //делаем активной кнопку "create"
 function enableButton() {
 
     if (inputX.value && inputY.value) {
         document.getElementById('create').disabled = false;
+    } else if (!inputX.value || !inputY.value) {
+        document.getElementById('create').disabled = true;
     }
 
 }
 
 buttonCreate.addEventListener('click', checkInput);
 
-//Валидируем введенные значения X и Y и при корректном вводе вызываем добаление шахматной доски
+//Проверяем введенные значения X и Y и при корректном вводе вызываем добаление шахматной доски
 function checkInput() {
     var dataX = +inputX.value;
     var dataY = +inputY.value;
 
     if (isNaN(dataX) && isNaN(dataY) || isNaN(dataX) && !isNaN(dataY) && (dataY < 1 || dataY > 10) ||
         !isNaN(dataX) && isNaN(dataY) && (dataX < 1 || dataX > 10) ||
-        !isNaN(dataX) && (dataX < 1 || dataX > 10) && !isNaN(dataY) && (dataY < 1 || dataY > 10)) {
+        !isNaN(dataX) && (dataX < 1 || dataX > 10) && !isNaN(dataY) && (dataY < 1 || dataY > 10) ||
+        !isNaN(dataX) && !isNaN(dataY) && parseInt(inputX.value) !== dataX && parseInt(inputY.value) !== dataY ||
+        !isNaN(dataX) && parseInt(inputX.value) !== dataX && !isNaN(dataY) && (dataY < 1 || dataY > 10) ||
+        !isNaN(dataY) && parseInt(inputY.value) !== dataY && !isNaN(dataX) && (dataX < 1 || dataX > 10) ||
+        !isNaN(dataX) && parseInt(inputX.value) !== dataX && isNaN(dataY) ||
+        !isNaN(dataY) && parseInt(inputY.value) !== dataY && isNaN(dataX)) {
         alert('Введите корректные значения в поля X и Y - целое число от 1 до 10');
         document.getElementById('create').disabled = true;
         inputX.value = '';
         inputY.value = '';
     } else if (isNaN(dataX) && !isNaN(dataY) && (dataY >= 1 || dataY <= 10) ||
-        !isNaN(dataX) && (dataX < 1 || dataX > 10)) {
+        !isNaN(dataX) && (dataX < 1 || dataX > 10) || !isNaN(dataX) && parseInt(inputX.value) !== dataX) {
         alert('Введите корректное значение в поле X - целое число от 1 до 10');
         document.getElementById('create').disabled = true;
         inputX.value = '';
         inputY.value = '';
     } else if (isNaN(dataY) && !isNaN(dataX) && (dataX >= 1 || dataX <= 10) ||
-        !isNaN(dataY) && (dataY < 1 || dataY > 10)) {
+        !isNaN(dataY) && (dataY < 1 || dataY > 10) || !isNaN(dataY) && parseInt(inputY.value) !== dataY) {
         alert('Введите корректное значение в поле Y - целое число от 1 до 10');
         document.getElementById('create').disabled = true;
         inputX.value = '';
