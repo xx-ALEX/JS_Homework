@@ -45,7 +45,6 @@ addRow.addEventListener('click', function () {
 //добавление текстового ввода по клику на ячейку
 var newInput = document.createElement('input');
 newInput.setAttribute('type', 'text');
-newInput.setAttribute('onkeydown', 'handle(event)');
 var cell;
 var table = document.querySelector('table');
 
@@ -71,9 +70,9 @@ function addInput(td) {
 }
 
 //исчезновение текстового ввода при потере фокуса
-newInput.oninput = function () {
+newInput.addEventListener('input', function () {
     cell.innerHTML = newInput.value;
-}
+});
 
 newInput.addEventListener('blur', hideInput);
 
@@ -83,9 +82,17 @@ function hideInput() {
     newInput.remove();
 }
 
-function handle(event) {
-    if(event.code === 'Enter') {
-        event.preventDefault();
+newInput.addEventListener('keydown', function (event) {
+    if (event.code === 'Enter') {
+        newInput.removeEventListener('blur', hideInput);
+        handle(event);
+        newInput.addEventListener('blur', hideInput);
+    }
+});
+
+function handle(e) {
+    if(e.code === 'Enter' ) {
+        e.preventDefault();
         cell.removeAttribute('id');
         cell.style.display = 'block';
         newInput.remove();
