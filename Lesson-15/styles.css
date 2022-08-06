@@ -1,0 +1,93 @@
+body {
+    background: linear-gradient(90deg, #ddf3da, #d9e3ef, #efebd2);
+}
+button#getUserList {
+    font-weight: bold;
+    font-size: 22px;
+    height: 40px;
+    border-radius: 10px;
+    border: none;
+    padding: 0 10px 0 10px;
+    cursor: pointer;
+    margin: 10px 0 5px 10px;
+    background: linear-gradient(90deg, deeppink, deeppink, blueviolet);
+}
+button.error_ok {
+    width: 100px;
+    height: 30px;
+    font-weight: bold;
+    font-size: 16px;
+    background: white;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    display: block;
+    margin: auto;
+}
+button.error_ok:hover {
+    background: rgba(45, 115, 196, 0.93);
+    color: white;
+    transition: .4s;
+}
+p.user {
+    font-weight: bold;
+    font-size: 22px;
+    font-family: sans-serif;
+    border-radius: 10px;
+    margin: 5px 0 0 0;
+    padding: 10px;
+    cursor: pointer;
+    background: linear-gradient(90deg, rgba(255, 20, 147, 0.7), rgba(138, 43, 226, 0.7), rgba(128, 0, 128, 0.7));
+}
+p.user:hover {
+    color: white;
+    transition: .6s;
+    transform: scale(1.03);
+    box-shadow: 0 0 8px rgb(152, 24, 187);
+    background: linear-gradient(90deg, #ab035e, #5a06a8, #500250);
+}
+p.user_clicked {
+    color: white;
+    transition: .6s;
+    transform: scale(1.02);
+    box-shadow: 0 0 8px rgb(152, 24, 187);
+    background: linear-gradient(270deg, #ab035e, #5a06a8, #500250);
+}
+div.users {
+    width: 500px;
+    margin: 0 0 0 10px;
+}
+div[data-user] {
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.85);
+    margin: 0 0 12px 0;
+    padding: 20px;
+    display: none;
+}
+div[data-user].visible {
+    display: block;
+}
+div.names {
+    font-family: sans-serif;
+    font-style: italic;
+    display: inline-block;
+    margin: 20px;
+    position: relative;
+    bottom: 12px;
+}
+div.names p {
+    margin: 3px;
+}
+div.error {
+    width: 300px;
+    background: rgba(231, 31, 31, 0.8);
+    margin: 100px auto;
+    padding: 10px;
+    border-radius: 25px;
+}
+div.error p {
+    font-weight: bold;
+    font-size: 20px;
+    font-family: sans-serif;
+    text-align: center;
+}

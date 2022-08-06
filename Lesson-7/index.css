@@ -1,0 +1,457 @@
+body {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  vertical-align: baseline;
+  font-family: sans-serif;
+  background-color: #f2f4f8;
+  min-width: 320px;
+}
+header {
+  background-color: #2d313d;
+  width: 100%;
+  height: 100px;
+  margin: auto;
+}
+nav.mobile-menu {
+  display: none;
+}
+header div.up {
+  margin: 0 auto;
+  width: 100%;
+  height: 55px;
+}
+header div div.header {
+  max-width: 960px;
+  height: 50px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+header div div img {
+  width: 32px;
+  height: 20px;
+  margin: 18px 0 18px 6px;
+}
+header div div div.userName {
+  width: 400px;
+  display: flex;
+  justify-content: space-between;
+}
+select[name='city'] {
+  margin: 12px 0 0 0;
+  width: 90px;
+  height: 20px;
+  cursor: pointer;
+  border: none;
+  font-size: 14px;
+  text-align: center;
+  text-decoration: underline dashed;
+  color: #646d81;
+  background-color: #2d313d;
+}
+button {
+  height: 30px;
+  width: 30px;
+  cursor: pointer;
+  padding: 0;
+  margin: 8px 0 0 0;
+  background: transparent;
+  border: none;
+}
+button.userName {
+  height: 35px;
+  width: 115px;
+  cursor: pointer;
+  padding: 0;
+  margin: 7px 0 0 0;
+  display: flex;
+  justify-content: space-between;
+}
+button.bell {
+  background: url("icons/bell.svg") no-repeat center/60%;
+}
+button.bell:hover {
+  background: url("icons/bell-white.svg") no-repeat center/60%;
+  transition: 0.6s;
+}
+button.envelope {
+  background: url("icons/envelope.svg") no-repeat center/60%;
+}
+button.envelope:hover {
+  background: url("icons/envelope-white.svg") no-repeat center/60%;
+  transition: 0.6s;
+}
+button.search {
+  background: url("icons/magnifying-glass.svg") no-repeat center/60%;
+}
+button.search:hover {
+  background: url("icons/magnifying-glass-white.svg") no-repeat center/60%;
+  transition: 0.6s;
+}
+button.userName span {
+  height: 30px;
+  padding: 8px 0 0 0;
+  margin: 0;
+  font-size: 14px;
+  color: #646d81;
+}
+button.userName p:hover {
+  color: white;
+  transition: 0.6s;
+}
+button.userName img {
+  margin: 0;
+  width: 30px;
+  height: 30px;
+  border-radius: 4px;
+}
+select[name='city']:hover {
+  color: white;
+  text-decoration: none;
+  transition: 0.6s;
+}
+header div.down {
+  margin: 0 auto;
+  padding: 0;
+  width: 100%;
+  height: 45px;
+  background-color: #646d81;
+}
+nav.desktop-menu {
+  max-width: 960px;
+  margin: 0 auto;
+  height: 45px;
+  font: 14px Arial;
+}
+nav.desktop-menu a {
+  text-decoration: none;
+  color: white;
+  display: inline-block;
+  padding: 14px 4px 15px 4px;
+  margin: 0 26px 0 0;
+  border-radius: 2px;
+}
+nav.desktop-menu a:hover {
+  color: #2d313d;
+  transition: 0.6s;
+}
+nav.desktop-menu a:hover {
+  background: white;
+  border-radius: 15px;
+  opacity: 0.92;
+  transition: 1s;
+}
+main {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: auto;
+}
+div.content {
+  margin: 0 auto;
+  max-width: 960px;
+  display: flex;
+  justify-content: flex-start;
+  box-shadow: 0 3px 10px #e0e2e6;
+  background-color: white;
+}
+menu {
+  width: 210px;
+  padding: 20px 0 20px 0;
+  margin: 0;
+  border-right: #b4b5b8 1px solid;
+}
+main menu ul {
+  list-style-type: none;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+main menu ul li {
+  width: 100%;
+}
+main menu ul li a {
+  width: 152px;
+  display: inline-block;
+  padding: 10px 0 10px 20px;
+  margin: 0;
+  text-decoration: none;
+  font: 14px Arial;
+  color: #99a1b3;
+}
+main menu ul li a:hover {
+  background: #646d81;
+  color: white;
+  border-radius: 5px;
+  transition: 0.6s;
+}
+main menu ul li a:hover {
+  border-radius: 12px;
+  transition: 1.2s;
+}
+li.submenu {
+  margin-top: 32px;
+  padding: 0 30px 10px 23px;
+  font: 18px Georgia;
+}
+div.users {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+div.empty {
+  width: 100%;
+  height: 74px;
+  display: none;
+}
+div.upSelect {
+  height: 74px;
+}
+div.upSelect p {
+  font: 30px Georgia;
+  display: inline-block;
+  margin: 20px 20px 0 30px;
+}
+select[name='title'] {
+  font: 30px Georgia;
+  margin: 20px 10px 0 0;
+  border: none;
+  text-align: center;
+  text-decoration: underline 2px dashed;
+  cursor: pointer;
+}
+select[name='title']:hover {
+  text-decoration: none;
+  color: white;
+  background: #b4b5ba;
+  border-radius: 5px;
+  transition: 0.7s;
+}
+div.downSearch {
+  height: 56px;
+  background-color:#f2f4f8;
+}
+form {
+  height: 90%;
+  display: inline-block;
+  margin: 6px 0 0 30px;
+}
+form input[type="text"] {
+  padding-left: 10px;
+  outline: none;
+  -webkit-appearance: none;
+  font: 14px Arial;
+  width: 280px;
+  height: 40px;
+  border: solid #d6d9e1 1px;
+  border-radius: 5px;
+  display: inline-block;
+  background: white url(img/search.png) no-repeat 260px 9px;
+}
+img[src="icons/magnifying-glass-gray.svg"] {
+  display: none;
+}
+div.hidden-item {
+  display: none;
+}
+div.item {
+  display: inline-block;
+  float: right;
+  position: relative;
+  top: 20px;
+  right: 20px;
+}
+div.item a:first-child {
+  display: inline-block;
+  position: relative;
+  bottom: 5px;
+  text-decoration: none;
+  color: #84868d;
+  font: 12px Georgia;
+}
+div.item a:first-child:hover {
+  color: black;
+  transition: 0.6s;
+}
+div.item a:last-child {
+  margin: 0 0 0 70px;
+  width: 18px;
+  height: 18px;
+  display: inline-block;
+  background: url("icons/customize-gray.svg") no-repeat center/90%;
+}
+div.item a:last-child:hover {
+  background: url("icons/customize.svg") no-repeat center/90%;
+  transition: 0.6s;
+}
+div.info {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  padding: 30px 10px 30px 10px;
+}
+div.user {
+  display: flex;
+  flex-direction: row;
+  padding: 0 0 20px 0;
+  margin: 0 auto;
+  width: 94%;
+  height: 135px;
+}
+div.userPhoto1 {
+  cursor: pointer;
+  width: 60px;
+  height: 60px;
+  background: url("img/photo1.jpeg");
+  border-radius: 3px;
+}
+div.userPhoto2 {
+  cursor: pointer;
+  width: 60px;
+  height: 60px;
+  background: url("img/photo2.jpeg");
+  border-radius: 3px;
+}
+div.userPhoto3 {
+  cursor: pointer;
+  width: 60px;
+  height: 60px;
+  background: url("img/photo3.jpeg");
+  border-radius: 3px;
+}
+div.userPhoto4 {
+  cursor: pointer;
+  width: 60px;
+  height: 60px;
+  background: url("img/photo4.jpeg");
+  border-radius: 3px;
+}
+div.newsUser {
+  height: 98%;
+  width: 96%;
+  padding: 0 10px 0 10px;
+  display: flex;
+  flex-direction: column;
+  font-size: 14px;
+}
+div.newsUser:hover {
+  cursor: pointer;
+}
+div.upNewsUser {
+  width: 100%;
+  height: 20px;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+}
+div.chatInfo {
+  width: 80px;
+  display: flex;
+  justify-content: space-between;
+}
+div.chat {
+  width: 25px;
+  background: url("icons/chat.svg") no-repeat 5% 30%/47%;
+}
+div.time {
+  width: 40px;
+  background: url("icons/clock-of-circular.svg") no-repeat 5% 20%/29%;
+}
+div.chat p, div.time p {
+  text-align: right;
+}
+div.upNewsUser p, div.tags p {
+  margin: 0;
+  padding: 0;
+  font: 12px Arial;
+  color: #99a1b3;
+}
+div.upNewsUser span {
+  display: inline-block;
+  background: #f2f4f8;
+  padding: 5px 15px;
+  border-radius: 5px;
+  margin-left: 26px;
+}
+span.title {
+  color: #4f9cd4;
+  font: bold 16px Arial;
+  display: inline-block;
+  margin: 0 0 4px 0;
+}
+div.tags {
+  height: 21px;
+  padding: 0 0 0 20px;
+  background: url("icons/tag.svg") no-repeat left;
+}
+div.buttonsBlock {
+  margin: 0 auto;
+  width: 200px;
+  display: flex;
+  justify-content: space-between;
+}
+a.previous, a.next {
+  text-align: center;
+  display: inline-block;
+  text-decoration: none;
+  color: black;
+  font: 14px Arial;
+  border: solid #99a1b3 1px;
+  border-radius: 4px;
+}
+a.previous {
+  background: url("icons/previous.svg") no-repeat 5% 50%/15%;
+  width: 100px;
+  padding: 10px 0 10px 5px;
+}
+a.next {
+  background: url("icons/next.svg") no-repeat 95% 50%/17%;
+  width: 80px;
+  padding: 10px 5px 10px 0;
+}
+a.previous:hover, a.next:hover {
+background-color: #f397a2;
+  transition: 0.6s;
+}
+footer {
+  width: 788px;
+  height: 88px;
+  position: fixed;
+  bottom: -2%;
+  z-index: 1;
+  background: white;
+}
+div.upFooter {
+  height: 45%;
+  background-color: #f2f4f8;
+  margin: 0 0 1px 0;
+  padding: 0 0 0 28px;
+}
+div.upFooter a {
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  font: 12px Arial;
+  padding: 14px 0;
+  margin-right: 18px;
+  color: #99a1b3;
+}
+div.upFooter a:hover {
+  color: black;
+  transition: 0.6s;
+}
+div.downFooter {
+  height: 45%;
+  padding: 0 0 0 56px;
+  background: url("img/logo-min.png") no-repeat 28px #f2f4f8;
+}
+div.downFooter p {
+  display: inline-block;
+  margin: 12px 0 0 0;
+  padding: 0;
+  font: 12px Arial;
+  color: #99a1b3;
+}

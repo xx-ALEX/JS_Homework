@@ -1,0 +1,787 @@
+@media screen and (min-width: 641px) and (max-width: 970px) {
+    header div div img {
+        margin: 18px 0 18px 10px;
+    }
+    div.userName {
+        margin: 0 5px 0 0;
+    }
+    nav {
+        padding: 0 0 0 8px;
+    }
+}
+@media screen and (min-width: 880px) and (max-width: 910px) {
+    div.user {
+        width: 98%;
+        height: 147px;
+    }
+    div.content {
+        min-height: 952px;
+    }
+}
+@media screen and (min-width: 850px) and (max-width: 879px) {
+    div.user {
+        width: 98%;
+        height: 149px;
+    }
+    div.content {
+        min-height: 969px;
+    }
+}
+@media screen and (min-width: 800px) and (max-width: 849px) {
+    div.user {
+        width: 96%;
+        height: 150px;
+    }
+    div.info {
+        padding: 25px 10px 25px 10px;
+    }
+    div.content {
+        min-height: 970px;
+    }
+    div.item {
+        right: 30px;
+    }
+    div.item a:last-child {
+        margin: 0 0 0 40px;
+    }
+}
+@media screen and (min-width: 760px) and (max-width: 799px) {
+    div.user {
+        width: 97%;
+        height: 151px;
+    }
+    div.info {
+        padding: 20px 9px 22px 9px;
+    }
+    div.content {
+        min-height: 972px;
+    }
+    div.item {
+        right: 20px;
+    }
+    div.item a:last-child {
+        margin: 0 0 0 20px;
+    }
+}
+@media screen and (min-width: 740px) and (max-width: 759px) {
+    div.user {
+        width: 99%;
+        height: 152px;
+    }
+    div.info {
+        padding: 15px 8px 25px 8px;
+    }
+    div.content {
+        min-height: 980px;
+    }
+    div.item {
+        right: 20px;
+    }
+    div.item a:last-child {
+        margin: 0 0 0 20px;
+    }
+}
+@media screen and (min-width: 680px) and (max-width: 739px) {
+    div.user {
+        width: 99%;
+        height: 165px;
+    }
+    div.info {
+        padding: 15px 8px 25px 8px;
+    }
+    div.content {
+        min-height: 1016px;
+    }
+    div.item {
+        right: 20px;
+    }
+    div.item a:last-child {
+        margin: 0 0 0 20px;
+    }
+}
+@media screen and (min-width: 641px) and (max-width: 679px) {
+    div.user {
+        width: 99%;
+        height: 180px;
+    }
+    div.info {
+        padding: 15px 8px 25px 8px;
+    }
+    div.content {
+        min-height: 1080px;
+    }
+    div.item {
+        right: 10px;
+    }
+    div.item a:last-child {
+        margin: 0 0 0 20px;
+    }
+}
+@media screen and (min-width: 500px) and (max-width: 640px) {
+    header {
+        display: none;
+    }
+    menu {
+        display: none;
+    }
+    div.empty {
+        display: block;
+    }
+    div.user {
+        width: 99%;
+        height: 200px;
+    }
+    div.info {
+        padding: 15px 8px 25px 8px;
+    }
+    div.content {
+        min-height: 1190px;
+    }
+    div.item {
+        right: 10px;
+    }
+    div.item a:last-child {
+        margin: 0 0 0 20px;
+    }
+    nav.mobile-menu {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        background: #2d313d;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        padding: 0 0 0 20px;
+        height: 73px;
+        z-index: 1000;
+    }
+    div.icons {
+        display: flex;
+        width: 100%;
+        justify-content: space-around;
+        padding: 0 10px 0 5px;
+        background: none;
+    }
+    div.icons span {
+        cursor: pointer;
+        display: block;
+        color: white;
+        font-size: 30px;
+        margin: 13px 0 0 0;
+    }
+    div.icons img[src="img/userPhotoBig.jpeg"] {
+        cursor: pointer;
+        width: 60px;
+        height: 60px;
+        border-radius: 4px;
+    }
+    div.icons img[src="icons/magnifying-glass-white.svg"] {
+        cursor: pointer;
+        width: 40px;
+        height: 40px;
+        margin: 10px 0 0 0;
+    }
+    label.mobile-menu_btn {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 35px;
+        height: 30px;
+        cursor: pointer;
+        transition: .4s;
+    }
+    label.submenu {
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        width: 96%;
+        border-bottom: solid 1px gainsboro;
+        padding: 7px 20px 7px 20px;
+    }
+    label.submenu:hover {
+        background: #4f9cd4;
+        color: #111010;
+        transition: .4s;
+    }
+    div.mobile-menu_icon {
+        display: block;
+        position: relative;
+        background: gainsboro;
+        width: 100%;
+        height: 4px;
+        transition: .4s;
+    }
+    div.mobile-menu_icon::after, div.mobile-menu_icon::before {
+        content: "";
+        display: block;
+        background: white;
+        width: 100%;
+        height: 4px;
+        transition: .4s;
+    }
+    div.mobile-menu_icon::after {
+        position: relative;
+        top: 8px;
+    }
+    div.mobile-menu_icon::before {
+        position: relative;
+        top: -12px;
+    }
+    div.mobile-menu_container {
+        position: fixed;
+        text-align: left;
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+        top: 73px;
+        left: 0;
+        width: 60vw;
+        z-index: 999;
+        height: 0;
+        opacity: 0.99;
+        transition: .5s;
+        overflow: auto;
+        background: #646d81;
+    }
+    ul.mobile-menu_list {
+        transition: .5s;
+        list-style: none;
+        margin: 0;
+        padding: 5px 0 0 0;
+        width: 100%;
+        height: 80%;
+    }
+    li.mobile-menu_item {
+        font-size: 22px;
+        margin: 5px 0 0 0;
+        overflow: hidden;
+    }
+    a.mobile-menu_link {
+        display: inline-block;
+        width: 100%;
+        height: 100%;
+        text-decoration: none;
+        color: gainsboro;
+    }
+    a.fat {
+        font-weight: bold;
+    }
+    input.mobile-menu_checkbox, input.mobile-submenu_checkbox_Mac, input.mobile-submenu_checkbox_iPad,
+    input.mobile-submenu_checkbox_iPhone, input.mobile-submenu_checkbox_TV, input.mobile-submenu_checkbox_AirPods,
+    input.mobile-submenu_checkbox_accessories, input.mobile-submenu_checkbox_bang, input.mobile-submenu_checkbox_action,
+    input.mobile-submenu_checkbox_services, input.mobile-submenu_checkbox_reviews {
+        display: none;
+    }
+    input.mobile-menu_checkbox:checked ~ div.mobile-menu_container,
+    input.mobile-submenu_checkbox_Mac:checked ~ li>ul.mobile-submenu_list_Mac,
+    input.mobile-submenu_checkbox_iPad:checked ~ li>ul.mobile-submenu_list_iPad,
+    input.mobile-submenu_checkbox_iPhone:checked ~ li>ul.mobile-submenu_list_iPhone,
+    input.mobile-submenu_checkbox_TV:checked ~ li>ul.mobile-submenu_list_TV,
+    input.mobile-submenu_checkbox_AirPods:checked ~ li>ul.mobile-submenu_list_AirPods,
+    input.mobile-submenu_checkbox_accessories:checked ~ li>ul.mobile-submenu_list_accessories,
+    input.mobile-submenu_checkbox_bang:checked ~ li>ul.mobile-submenu_list_bang,
+    input.mobile-submenu_checkbox_action:checked ~ li>ul.mobile-submenu_list_action,
+    input.mobile-submenu_checkbox_services:checked ~ li>ul.mobile-submenu_list_services,
+    input.mobile-submenu_checkbox_reviews:checked ~ li>ul.mobile-submenu_list_reviews {
+        height: 70%;
+        border-radius: 0 30px 30px 0;
+        transition: 1s;
+    }
+    input.mobile-menu_checkbox:checked ~ label.mobile-menu_btn>div.mobile-menu_icon {
+        background: transparent;
+    }
+    input.mobile-menu_checkbox:checked ~ label.mobile-menu_btn>div.mobile-menu_icon::before,
+    input.mobile-menu_checkbox:checked ~ label.mobile-menu_btn>div.mobile-menu_icon::after {
+        top: 0;
+    }
+    input.mobile-menu_checkbox:checked ~ label.mobile-menu_btn>div.mobile-menu_icon::after {
+        transform: rotate(45deg) translateY(-3px);
+        -webkit-transform: rotate(45deg) translateY(-3px);
+        background: orangered;
+    }
+    input.mobile-menu_checkbox:checked ~ label.mobile-menu_btn div.mobile-menu_icon::before {
+        transform: rotate(-45deg) translateY(3px);
+        -webkit-transform: rotate(-45deg) translateY(3px);
+        background: orangered;
+    }
+    input.mobile-menu_checkbox {
+        display: none;
+    }
+}
+@media screen and (min-width: 399px) and (max-width: 499px) {
+    header {
+        display: none;
+    }
+    menu {
+        display: none;
+    }
+    div.empty {
+        display: block;
+    }
+    div.upSelect {
+        height: 64px;
+    }
+    div.upSelect p {
+        font: 26px Georgia;
+        margin: 18px 20px 0 50px;
+    }
+    select[name='title'] {
+        font: 26px Georgia;
+        margin: 18px 10px 0 0;
+    }
+    div.user {
+        width: 99%;
+        height: 202px;
+    }
+    div.info {
+        padding: 15px 8px 25px 8px;
+    }
+    div.content {
+        min-height: 1180px;
+    }
+    div.downSearch {
+        display: flex;
+        justify-content: space-between;
+    }
+    div.downSearch form {
+        display: none;
+    }
+    img[src="icons/magnifying-glass-gray.svg"] {
+        height: 50%;
+        display: block;
+        margin: 15px 0 0 20px;
+    }
+    div.item {
+        display: none;
+    }
+    div.hidden-item {
+        width: 90px;
+        height: 50%;
+        margin: 15px 15px 0 0;
+        display: flex;
+        justify-content: space-around;
+    }
+    nav.mobile-menu {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        background: #2d313d;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        padding: 0 0 0 20px;
+        height: 73px;
+        z-index: 1000;
+    }
+    div.icons {
+        display: flex;
+        width: 100%;
+        justify-content: space-around;
+        padding: 0 10px 0 5px;
+        background: none;
+    }
+    div.icons span {
+        cursor: pointer;
+        display: block;
+        color: white;
+        font-size: 24px;
+        margin: 13px 0 0 0;
+    }
+    div.icons img[src="img/logo-white.png"] {
+        height: 30px;
+        margin: 13px 0 0 0;
+    }
+    div.icons img[src="img/userPhotoBig.jpeg"] {
+        cursor: pointer;
+        width: 50px;
+        height: 50px;
+        border-radius: 4px;
+    }
+    div.icons img[src="icons/magnifying-glass-white.svg"] {
+        cursor: pointer;
+        width: 30px;
+        height: 30px;
+        margin: 10px 0 0 0;
+    }
+    label.mobile-menu_btn {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 35px;
+        height: 30px;
+        cursor: pointer;
+        transition: .4s;
+    }
+    label.submenu {
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        width: 96%;
+        border-bottom: solid 1px gainsboro;
+        padding: 7px 20px 7px 20px;
+    }
+    label.submenu:hover {
+        background: #4f9cd4;
+        color: #111010;
+        transition: .4s;
+    }
+    div.mobile-menu_icon {
+        display: block;
+        position: relative;
+        background: gainsboro;
+        width: 100%;
+        height: 4px;
+        transition: .4s;
+    }
+    div.mobile-menu_icon::after, div.mobile-menu_icon::before {
+        content: "";
+        display: block;
+        background: white;
+        width: 100%;
+        height: 4px;
+        transition: .4s;
+    }
+    div.mobile-menu_icon::after {
+        position: relative;
+        top: 8px;
+    }
+    div.mobile-menu_icon::before {
+        position: relative;
+        top: -12px;
+    }
+    div.mobile-menu_container {
+        position: fixed;
+        text-align: left;
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+        top: 73px;
+        left: 0;
+        width: 60vw;
+        z-index: 999;
+        height: 0;
+        opacity: 0.99;
+        transition: .5s;
+        overflow: auto;
+        background: #646d81;
+    }
+    ul.mobile-menu_list {
+        transition: .5s;
+        list-style: none;
+        margin: 0;
+        padding: 5px 0 0 0;
+        width: 100%;
+        height: 80%;
+    }
+    li.mobile-menu_item {
+        font-size: 22px;
+        margin: 5px 0 0 0;
+        overflow: hidden;
+    }
+    a.mobile-menu_link {
+        display: inline-block;
+        width: 100%;
+        height: 100%;
+        text-decoration: none;
+        color: gainsboro;
+    }
+    a.fat {
+        font-weight: bold;
+    }
+    input.mobile-menu_checkbox, input.mobile-submenu_checkbox_Mac, input.mobile-submenu_checkbox_iPad,
+    input.mobile-submenu_checkbox_iPhone, input.mobile-submenu_checkbox_TV, input.mobile-submenu_checkbox_AirPods,
+    input.mobile-submenu_checkbox_accessories, input.mobile-submenu_checkbox_bang, input.mobile-submenu_checkbox_action,
+    input.mobile-submenu_checkbox_services, input.mobile-submenu_checkbox_reviews {
+        display: none;
+    }
+    input.mobile-menu_checkbox:checked ~ div.mobile-menu_container,
+    input.mobile-submenu_checkbox_Mac:checked ~ li>ul.mobile-submenu_list_Mac,
+    input.mobile-submenu_checkbox_iPad:checked ~ li>ul.mobile-submenu_list_iPad,
+    input.mobile-submenu_checkbox_iPhone:checked ~ li>ul.mobile-submenu_list_iPhone,
+    input.mobile-submenu_checkbox_TV:checked ~ li>ul.mobile-submenu_list_TV,
+    input.mobile-submenu_checkbox_AirPods:checked ~ li>ul.mobile-submenu_list_AirPods,
+    input.mobile-submenu_checkbox_accessories:checked ~ li>ul.mobile-submenu_list_accessories,
+    input.mobile-submenu_checkbox_bang:checked ~ li>ul.mobile-submenu_list_bang,
+    input.mobile-submenu_checkbox_action:checked ~ li>ul.mobile-submenu_list_action,
+    input.mobile-submenu_checkbox_services:checked ~ li>ul.mobile-submenu_list_services,
+    input.mobile-submenu_checkbox_reviews:checked ~ li>ul.mobile-submenu_list_reviews {
+        height: 70%;
+        border-radius: 0 30px 30px 0;
+        transition: 1s;
+    }
+    input.mobile-menu_checkbox:checked ~ label.mobile-menu_btn>div.mobile-menu_icon {
+        background: transparent;
+    }
+    input.mobile-menu_checkbox:checked ~ label.mobile-menu_btn>div.mobile-menu_icon::before,
+    input.mobile-menu_checkbox:checked ~ label.mobile-menu_btn>div.mobile-menu_icon::after {
+        top: 0;
+    }
+    input.mobile-menu_checkbox:checked ~ label.mobile-menu_btn>div.mobile-menu_icon::after {
+        transform: rotate(45deg) translateY(-3px);
+        -webkit-transform: rotate(45deg) translateY(-3px);
+        background: orangered;
+    }
+    input.mobile-menu_checkbox:checked ~ label.mobile-menu_btn div.mobile-menu_icon::before {
+        transform: rotate(-45deg) translateY(3px);
+        -webkit-transform: rotate(-45deg) translateY(3px);
+        background: orangered;
+    }
+    input.mobile-menu_checkbox {
+        display: none;
+    }
+    div.downFooter {
+        display: none;
+    }
+    div.upFooter {
+        height: 100%;
+    }
+    div.upFooter a {
+        margin: 0 0 0 22px;
+    }
+    footer {
+        height: 60px;
+    }
+}
+@media screen and (max-width: 398px) {
+    header {
+        display: none;
+    }
+    menu {
+        display: none;
+    }
+    div.empty {
+        display: block;
+    }
+    div.upSelect {
+        height: 64px;
+    }
+    div.upSelect p {
+        font: 22px Georgia;
+        margin: 16px 16px 0 40px;
+    }
+    select[name='title'] {
+        font: 22px Georgia;
+        margin: 16px 10px 0 0;
+    }
+    div.user {
+        width: 99%;
+        height: 212px;
+    }
+    div.info {
+        padding: 15px 8px 25px 8px;
+    }
+    div.content {
+        min-height: 1250px;
+    }
+    div.upNewsUser span {
+        margin-left: 10px;
+    }
+    div.downSearch {
+        display: flex;
+        justify-content: space-between;
+    }
+    div.downSearch form {
+        display: none;
+    }
+    img[src="icons/magnifying-glass-gray.svg"] {
+        height: 50%;
+        display: block;
+        margin: 15px 0 0 20px;
+    }
+    div.item {
+        display: none;
+    }
+    div.hidden-item {
+        width: 90px;
+        height: 50%;
+        margin: 15px 15px 0 0;
+        display: flex;
+        justify-content: space-around;
+    }
+    nav.mobile-menu {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        background: #2d313d;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        padding: 0 0 0 20px;
+        height: 73px;
+        z-index: 1000;
+    }
+    div.icons {
+        display: flex;
+        width: 100%;
+        justify-content: space-around;
+        padding: 0 10px 0 5px;
+        background: none;
+    }
+    div.icons span {
+        cursor: pointer;
+        display: block;
+        color: white;
+        font-size: 24px;
+        margin: 13px 0 0 0;
+    }
+    div.icons img[src="img/logo-white.png"] {
+        height: 30px;
+        margin: 13px 0 0 0;
+    }
+    div.icons img[src="img/userPhotoBig.jpeg"] {
+        cursor: pointer;
+        width: 50px;
+        height: 50px;
+        border-radius: 4px;
+    }
+    div.icons img[src="icons/magnifying-glass-white.svg"] {
+        cursor: pointer;
+        width: 30px;
+        height: 30px;
+        margin: 10px 0 0 0;
+    }
+    label.mobile-menu_btn {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 35px;
+        height: 30px;
+        cursor: pointer;
+        transition: .4s;
+    }
+    label.submenu {
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        width: 96%;
+        border-bottom: solid 1px gainsboro;
+        padding: 7px 20px 7px 20px;
+    }
+    label.submenu:hover {
+        background: #4f9cd4;
+        color: #111010;
+        transition: .4s;
+    }
+    div.mobile-menu_icon {
+        display: block;
+        position: relative;
+        background: gainsboro;
+        width: 100%;
+        height: 4px;
+        transition: .4s;
+    }
+    div.mobile-menu_icon::after, div.mobile-menu_icon::before {
+        content: "";
+        display: block;
+        background: white;
+        width: 100%;
+        height: 4px;
+        transition: .4s;
+    }
+    div.mobile-menu_icon::after {
+        position: relative;
+        top: 8px;
+    }
+    div.mobile-menu_icon::before {
+        position: relative;
+        top: -12px;
+    }
+    div.mobile-menu_container {
+        position: fixed;
+        text-align: left;
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+        top: 73px;
+        left: 0;
+        width: 60vw;
+        z-index: 999;
+        height: 0;
+        opacity: 0.99;
+        transition: .5s;
+        overflow: auto;
+        background: #646d81;
+    }
+    ul.mobile-menu_list {
+        transition: .5s;
+        list-style: none;
+        margin: 0;
+        padding: 5px 0 0 0;
+        width: 100%;
+        height: 80%;
+    }
+    li.mobile-menu_item {
+        font-size: 22px;
+        margin: 5px 0 0 0;
+        overflow: hidden;
+    }
+    a.mobile-menu_link {
+        display: inline-block;
+        width: 100%;
+        height: 100%;
+        text-decoration: none;
+        color: gainsboro;
+    }
+    a.fat {
+        font-weight: bold;
+    }
+    input.mobile-menu_checkbox, input.mobile-submenu_checkbox_Mac, input.mobile-submenu_checkbox_iPad,
+    input.mobile-submenu_checkbox_iPhone, input.mobile-submenu_checkbox_TV, input.mobile-submenu_checkbox_AirPods,
+    input.mobile-submenu_checkbox_accessories, input.mobile-submenu_checkbox_bang, input.mobile-submenu_checkbox_action,
+    input.mobile-submenu_checkbox_services, input.mobile-submenu_checkbox_reviews {
+        display: none;
+    }
+    input.mobile-menu_checkbox:checked ~ div.mobile-menu_container,
+    input.mobile-submenu_checkbox_Mac:checked ~ li>ul.mobile-submenu_list_Mac,
+    input.mobile-submenu_checkbox_iPad:checked ~ li>ul.mobile-submenu_list_iPad,
+    input.mobile-submenu_checkbox_iPhone:checked ~ li>ul.mobile-submenu_list_iPhone,
+    input.mobile-submenu_checkbox_TV:checked ~ li>ul.mobile-submenu_list_TV,
+    input.mobile-submenu_checkbox_AirPods:checked ~ li>ul.mobile-submenu_list_AirPods,
+    input.mobile-submenu_checkbox_accessories:checked ~ li>ul.mobile-submenu_list_accessories,
+    input.mobile-submenu_checkbox_bang:checked ~ li>ul.mobile-submenu_list_bang,
+    input.mobile-submenu_checkbox_action:checked ~ li>ul.mobile-submenu_list_action,
+    input.mobile-submenu_checkbox_services:checked ~ li>ul.mobile-submenu_list_services,
+    input.mobile-submenu_checkbox_reviews:checked ~ li>ul.mobile-submenu_list_reviews {
+        height: 70%;
+        border-radius: 0 30px 30px 0;
+        transition: 1s;
+    }
+    input.mobile-menu_checkbox:checked ~ label.mobile-menu_btn>div.mobile-menu_icon {
+        background: transparent;
+    }
+    input.mobile-menu_checkbox:checked ~ label.mobile-menu_btn>div.mobile-menu_icon::before,
+    input.mobile-menu_checkbox:checked ~ label.mobile-menu_btn>div.mobile-menu_icon::after {
+        top: 0;
+    }
+    input.mobile-menu_checkbox:checked ~ label.mobile-menu_btn>div.mobile-menu_icon::after {
+        transform: rotate(45deg) translateY(-3px);
+        -webkit-transform: rotate(45deg) translateY(-3px);
+        background: orangered;
+    }
+    input.mobile-menu_checkbox:checked ~ label.mobile-menu_btn div.mobile-menu_icon::before {
+        transform: rotate(-45deg) translateY(3px);
+        -webkit-transform: rotate(-45deg) translateY(3px);
+        background: orangered;
+    }
+    input.mobile-menu_checkbox {
+        display: none;
+    }
+    div.downFooter {
+        display: none;
+    }
+    div.upFooter {
+        height: 100%;
+    }
+    div.upFooter a {
+        margin: 0 0 0 12px;
+    }
+    footer {
+        height: 60px;
+    }
+}
