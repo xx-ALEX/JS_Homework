@@ -1,17 +1,20 @@
 //task 1:
-var regEx1 = /^[a-zA-Z]{3,10}_[a-zA-Z]{3,10}-\d{4}@([a-zA-Z\d]{2,21}|[a-zA-Z\d]{1,10}[-.]?[a-zA-Z\d]{1,10})\.com$/;
+var regEx1 = /^[a-z]{3,10}_[a-z]{3,10}(-\d{4})?@([a-z\d]{2,21}|[a-z\d]{1,10}[-.]?[a-z\d]{1,10})\.com$/i;
 
 console.log('name_surname-1234@gmail.com' + ' is ' + regEx1.test('name_surname-1234@gmail.com')); //true
 console.log('name_surname-1234@gmail-gmail.com' + ' is ' + regEx1.test('name_surname-1234@gmail-gmail.com')); //true
 console.log('name_surname-1234@gmail.gmail.com' + ' is ' + regEx1.test('name_surname-1234@gmail.gmail.com')); //true
+console.log('name_surname@gmail.com' + ' is ' + regEx1.test('name_surname@gmail.com')); //true
+console.log('name_surName@gmail.com' + ' is ' + regEx1.test('name_surName@gmail.com')); //true
 
+console.log('name_surname-12@gmail.com' + ' is ' + regEx1.test('name_surname-12@gmail.com')); //false
 console.log('name_surname-1234@gmail.gm-ail.com' + ' is ' + regEx1.test('name_surname-1234@gmail.gm-ail.com')); //false
 console.log('name_surname-1234@-gmail.com' + ' is ' + regEx1.test('name_surname-1234@-gmail.com')); //false
 console.log('');
 
 //task 2:
 function checkTelNumber(number) {
-    var regEx = /(\+?375-?|8-?0)(2[59]|33|44|17)(-?[^0a-zA-Zа-яА-я _-]\d{2})(-?\d{2}){2}/;
+    var regEx = /(\+?375-?|8-?0)(2[59]|33|44|17)(-?[1-9]\d{2})(-?\d{2}){2}/;
     return regEx.test(number);
 }
 
