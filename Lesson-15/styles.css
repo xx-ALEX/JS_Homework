@@ -1,7 +1,7 @@
 body {
     background: linear-gradient(90deg, #ddf3da, #d9e3ef, #efebd2);
 }
-button#getUserList {
+button.userList {
     font-weight: bold;
     font-size: 22px;
     height: 40px;
@@ -11,6 +11,17 @@ button#getUserList {
     cursor: pointer;
     margin: 10px 0 5px 10px;
     background: linear-gradient(90deg, deeppink, deeppink, blueviolet);
+}
+.dis {
+    font-weight: bold;
+    font-size: 22px;
+    height: 40px;
+    border-radius: 10px;
+    border: none;
+    padding: 0 10px 0 10px;
+    margin: 10px 0 5px 10px;
+    cursor: auto;
+    background: linear-gradient(90deg, rgba(255, 20, 147, 0.2), rgba(255, 20, 147, 0.2), rgba(138, 43, 226, 0.2));
 }
 button.error_ok {
     width: 100px;

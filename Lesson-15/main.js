@@ -1,11 +1,11 @@
-var getUserList = document.getElementById('getUserList');
-var usersContainer = document.getElementsByClassName('users');
+var getUserList = document.getElementsByClassName('userList')[0];
+var usersContainer = document.getElementsByClassName('users')[0];
 var indicator = 0;
 
 //AJAX (GET) запрос:
 getUserList.addEventListener('click', function () {
-    usersContainer[0].innerHTML = '';
-    if (localStorage.length) { //проверяем наличие данных в LocalStorage
+    usersContainer.innerHTML = '';
+    if (localStorage['users']) { //проверяем наличие данных в LocalStorage по ключу 'users'
         soundClickButton(); //добавление звуковых эффектов
         getUsersFromLS();
         return;
@@ -48,8 +48,8 @@ function getUsers(usersArray) {
     var count = 0;
     usersArray.forEach(function (user) {
         count++;
-        var userP = usersContainer[0].appendChild(document.createElement('p'));
-        var userDIV = usersContainer[0].appendChild(document.createElement('div'));
+        var userP = usersContainer.appendChild(document.createElement('p'));
+        var userDIV = usersContainer.appendChild(document.createElement('div'));
         userP.classList.add('user');
         userP.innerHTML = 'User ' + count;
         userDIV.dataset.user = user.first_name;
@@ -65,7 +65,7 @@ function getUsers(usersArray) {
 }
 
 //показ информации о пользователе по клику:
-usersContainer[0].addEventListener('click', function (event) {
+usersContainer.addEventListener('click', function (event) {
     var target = event.target.closest('p');
 
     if (target && target.className !== 'user user_clicked') {
@@ -107,35 +107,26 @@ function soundOK() {
 
 //запись полученных данных в LocalStorage:
 function checkAndSetLS(usersArray) {
-    if (!localStorage.length) {
-        var userNumber = document.getElementsByClassName('user');
-        for (var i = 0; i < usersArray.length; i++) {
-            localStorage.setItem(userNumber[i].innerHTML,JSON.stringify(usersArray[i]));
-        }
+    if (!localStorage['users']) {
+        localStorage.setItem('users',JSON.stringify(usersArray));
     }
 }
 
 //отрисовка данных из LocalStorage:
 function getUsersFromLS() {
-    var userArray = [];
+    var arrayLS = JSON.parse(localStorage['users']);
 
-    for (var i = 0; i < localStorage.length; i++) {
-        userArray[i] = localStorage.key(i);
-    }
-    userArray.sort(); //получение массива ключей LocalStorage в том порядке, в каком получаем данные при AJAX (GET)-запросе
-
-    for (var j = 0; j < localStorage.length; j++) {
-        var userP = usersContainer[0].appendChild(document.createElement('p'));
-        var userDIV = usersContainer[0].appendChild(document.createElement('div'));
+    for (var i = 0; i < arrayLS.length; i++) {
+        var userP = usersContainer.appendChild(document.createElement('p'));
+        var userDIV = usersContainer.appendChild(document.createElement('div'));
         userP.classList.add('user');
-        userP.innerHTML = userArray[j];
-        var object = JSON.parse(localStorage.getItem(userArray[j]));
-        userDIV.dataset.user = object.first_name;
-        userDIV.innerHTML = '<img alt="avatar" src=' + object.avatar + '>' +
-            '<div class="names">' + '<p>' + 'First name: ' + object.first_name + '</p>' +
-            '<p>' + 'Last name: ' + object.last_name + '</p>' +
-            '<p>' + 'email: ' + object.email + '</p>' +
-            '<p>' + 'id: ' + object.id + '</p>' + '</div>';
+        userP.innerHTML = 'User ' + (i + 1);
+        userDIV.dataset.user = arrayLS[i].first_name;
+        userDIV.innerHTML = '<img alt="avatar" src=' + arrayLS[i].avatar + '>' +
+            '<div class="names">' + '<p>' + 'First name: ' + arrayLS[i].first_name + '</p>' +
+            '<p>' + 'Last name: ' + arrayLS[i].last_name + '</p>' +
+            '<p>' + 'email: ' + arrayLS[i].email + '</p>' +
+            '<p>' + 'id: ' + arrayLS[i].id + '</p>' + '</div>';
         var dataUser = document.querySelector('div[data-user]');
         dataUser.classList.add('visible');
         document.getElementsByClassName('user')[0].classList.add('user_clicked');
@@ -150,13 +141,13 @@ var divError = document.createElement('div');
 divError.classList.add('error');
 
 function showError() {
-    var script = document.getElementsByTagName('script');
+    var script = document.getElementsByTagName('script')[0];
     divError.innerHTML = '<p>' + 'Ups! Something went wrong!' + '</p>';
     divError.appendChild(buttonOk);
-    document.body.insertBefore(divError, script[0]);
+    document.body.insertBefore(divError, script);
     getUserList.disabled = true;
-    getUserList.style.cursor = 'auto';
-    getUserList.style.background = 'linear-gradient(90deg, rgba(255, 20, 147, 0.2), rgba(255, 20, 147, 0.2), rgba(138, 43, 226, 0.2))';
+    getUserList.classList.toggle('userList');
+    getUserList.classList.toggle('dis');
 }
 
 //убираем по клику сообщение об ошибке:
@@ -164,6 +155,6 @@ buttonOk.addEventListener('click', function () {
     soundOK();
     divError.remove();
     getUserList.disabled = false;
-    getUserList.style.cursor = 'pointer';
-    getUserList.style.background = 'linear-gradient(90deg, deeppink, deeppink, blueviolet)';
+    getUserList.classList.toggle('userList');
+    getUserList.classList.toggle('dis');
 })
