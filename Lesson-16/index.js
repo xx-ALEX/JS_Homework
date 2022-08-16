@@ -24,7 +24,7 @@ console.log('+37525777-77-77' + ' is ' + checkTelNumber('+37525777-77-77')); //t
 console.log('+375257777777' + ' is ' + checkTelNumber('+375257777777')); //true
 console.log('+37525-7777777' + ' is ' + checkTelNumber('+37525-7777777')); //true
 console.log('37525-7777777' + ' is ' + checkTelNumber('37525-7777777')); //true
-console.log('+375251000000' + ' is ' + checkTelNumber('+375251000000')) //true
+console.log('+375251000000' + ' is ' + checkTelNumber('+375251000000')); //true
 
 console.log('+375-25-77-77777' + ' is ' + checkTelNumber('+375-25-77-77777')); //false (расположение тире не там)
 console.log('+375-25-0777777' + ' is ' + checkTelNumber('+375-25-0777777')); //false (основная часть номера начинается с 0)
