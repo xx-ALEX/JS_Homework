@@ -1,0 +1,42 @@
+body {
+    background: linear-gradient(90deg, #ddf3da, #d9e3ef, #efebd2);
+    padding: 20px;
+}
+button {
+    margin: 10px auto;
+    display: block;
+    width: 200px;
+    height: 40px;
+    font-size: 28px;
+    border-radius: 10px;
+    box-shadow: 6px 5px 5px pink;
+    cursor: pointer;
+}
+.reset_save {
+    display: none;
+}
+.reset_save_visible {
+    display: block;
+}
+div.screen {
+    margin: 20px auto;
+    display: flex;
+    justify-content: center;
+}
+p {
+    border: solid;
+    margin: 0 10px;
+    width: 70px;
+    text-align: center;
+    font-size: 40px;
+    border-radius: 10px;
+}
+.saved_results {
+    margin: 20px auto;
+}
+div.saved_results>p {
+    border: none;
+    margin: 3px auto;
+    font-size: 22px;
+    width: 200px;
+}
